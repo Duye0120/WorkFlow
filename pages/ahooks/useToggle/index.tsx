@@ -29,13 +29,23 @@ const UseToggle = () => {
 
   ~~~ts
   const [differentState, setDifferentState] = useToggle<string, boolean>('111', false)
+  
+  <TextArea value={differentState.toString()} />
+  <Space className={'w-full my-4'}>
+    <Button onClick={setDifferentState.setRight}>set false</Button>
+    <Button onClick={setDifferentState.setLeft}>set 1111</Button>
+    <Button onClick={setDifferentState.toggle}>切换</Button>
+    <Button onClick={() => setDifferentState.set('你好')}>设置成其他值</Button>
+  </Space>
   ~~~
 `
   return (
     <div className={'p-10 w-full h-full overflow-auto'}>
       <Space vertical align={'start'} className={'w-full'}>
         <Title heading={2}>基础·useToggle</Title>
-        <Divider />
+        <Divider align={'left'}>
+          基本用法
+        </Divider>
         <TextArea value={state} />
         <Space className={'w-full my-4'}>
           <Button onClick={toggle}>切换</Button>
@@ -44,7 +54,6 @@ const UseToggle = () => {
           <Button onClick={() => set('你好')}>set 你好</Button>
         </Space>
         <Divider align='left'>不同属性案例测试</Divider>
-        <ReactMarkdown value={differentTest} />
         <TextArea value={differentState.toString()} />
         <Space className={'w-full my-4'}>
           <Button onClick={setDifferentState.setRight}>set false</Button>
@@ -52,6 +61,7 @@ const UseToggle = () => {
           <Button onClick={setDifferentState.toggle}>切换</Button>
           <Button onClick={() => setDifferentState.set('你好')}>设置成其他值</Button>
         </Space>
+        <ReactMarkdown value={differentTest} />
         <Divider align={'left'}>
           实际用法
         </Divider>
