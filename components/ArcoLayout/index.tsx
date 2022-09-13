@@ -15,11 +15,7 @@ const ArcoLayout = ({ children, NavArray }: LayoutProps) => {
   return (
     <Layout className={'w-full h-screen bg-gray-200 !p-5'}>
       <Sider className={'h-full !w-1/5 !p-6 rounded-xl bg-white'}>
-        <Nav
-          defaultOpenKeys={['State']}
-          selectedKeys={[navSelected]}
-          className={'!w-full !h-full border-0'}
-        >
+        <Nav defaultOpenKeys={['State']} selectedKeys={[navSelected]} className={'!w-full !h-full border-0'}>
           <Link href={'/'}>
             <a
               onClick={() => {
@@ -47,7 +43,7 @@ const ArcoLayout = ({ children, NavArray }: LayoutProps) => {
                           onClick={({ itemKey }) => {
                             setNavSelected(itemKey as string);
                           }}
-                          className={'text-base'}
+                          className={'text-base !h-10'}
                           itemKey={item.itemKey}
                           text={item.text}
                         />
