@@ -1,4 +1,4 @@
-import { NavProps } from '../interface'
+import { NavProps } from '../interface';
 
 const navArray: NavProps[] = [
   {
@@ -10,17 +10,15 @@ const navArray: NavProps[] = [
       {
         text: 'useSetState',
         itemKey: 'useSetState'
-      },
-      {
-        text: 'useBoolean',
-        itemKey: 'useBoolean'
-      },
-      {
+      }, {
         text: 'useToggle',
         itemKey: 'useToggle'
+      }, {
+        text: 'useStorage',
+        itemKey: 'useStorage'
       }
     ]
   }
-]
+];
 
-export default navArray
+export default navArray;

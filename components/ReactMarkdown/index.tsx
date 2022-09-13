@@ -1,25 +1,26 @@
-import React from 'react'
-import Markdown from 'react-markdown'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import React from 'react';
+import Markdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { darcula as codeStyle } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 
 interface CodeBlockProps {
-  value: string
+  value: string;
 }
 
 
-
 const ReactMarkdown = (props: CodeBlockProps) => {
-  const { value } = props
+  const { value } = props;
   return (
     <Markdown
       components={{
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         code({ node, inline, className, children, ...props }) {
-          const match = /language-(\w+)/.exec(className || '')
+          const match = /language-(\w+)/.exec(className || '');
           return !inline && match ? (
             <SyntaxHighlighter
               language={match[1]}
+              style={codeStyle}
               PreTag='div'
               {...props}
             >
@@ -29,13 +30,13 @@ const ReactMarkdown = (props: CodeBlockProps) => {
             <code className={className} {...props}>
               {children}
             </code>
-          )
+          );
         }
       }}
     >
       {value}
     </Markdown>
-  )
-}
+  );
+};
 
-export default ReactMarkdown
+export default ReactMarkdown;
