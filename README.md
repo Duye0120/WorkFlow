@@ -32,7 +32,7 @@
 # 📦安装依赖
 
 ```bash
-$ pnpm install
+$ npm install
 # or
 $ yarn install
 ```
@@ -40,7 +40,7 @@ $ yarn install
 # 🔨项目启动
 
 ```bash
-$ pnpm run dev
+$ npm run dev
 # or
 $ yarn dev
 ```
