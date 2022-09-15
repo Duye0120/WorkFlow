@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Button, Divider, Form, Space, TextArea, Typography, useFormApi } from '@douyinfe/semi-ui';
 import { useSetState } from 'ahooks';
+
 React.useLayoutEffect = React.useEffect;
 const { Title, Text } = Typography;
 
@@ -10,7 +11,7 @@ interface StateType {
 }
 
 const MyComponent = () => {
-  const api = useRef<never>();
+  const api = useRef<any>();
   const [state, setState] = useSetState<StateType>({
     name: 'Jack',
     age: '18'
@@ -58,8 +59,8 @@ const MyComponent = () => {
     );
   };
   return (
-    <div className="p-10">
-      <Space align="start" vertical className={'w-full h-full'}>
+    <div className='p-10'>
+      <Space align='start' vertical className={'w-full h-full'}>
         <Title heading={2}>基础·useSetState</Title>
         <Text className={'py-6'} type={'secondary'}>
           管理 object 类型 state 的 Hooks，用法与 class 组件的
@@ -69,7 +70,7 @@ const MyComponent = () => {
         <Divider />
         <Title heading={2}>代码演示</Title>
         <div className={'w-full p-5  h-full border border-gray-300 border-solid'}>
-          <Space vertical align="start">
+          <Space vertical align='start'>
             <Title heading={4}>Data</Title>
             <TextArea className={'h-10'} value={JSON.stringify(state)} />
             <Title heading={4}>demo</Title>
@@ -80,8 +81,8 @@ const MyComponent = () => {
                 setState(field as StateType);
               }}
             >
-              <Form.Input className={'w-52'} field="name" label="姓名：" />
-              <Form.Input className={'w-52'} field="age" label="年龄：" />
+              <Form.Input className={'w-52'} field='name' label='姓名：' />
+              <Form.Input className={'w-52'} field='age' label='年龄：' />
               <Space>
                 <SetName />
                 <SetAge />
