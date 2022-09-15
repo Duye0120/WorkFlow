@@ -21,6 +21,7 @@ const markdown = `
   </Space>
   ~~~
 `;
+
 const differentTest = `
 
   ~~~ts
@@ -36,6 +37,20 @@ const differentTest = `
   ~~~
 `;
 
+const basicUseToggle = `
+
+  ~~~ts
+  const [state, { toggle, set, setLeft, setRight }] = useToggle('hello', 'World');
+  
+  <TextArea value={state} />
+  <Space className={'w-full my-4'}>
+    <Button onClick={toggle}>切换</Button>
+    <Button onClick={setLeft}>set Hello</Button>
+    <Button onClick={setRight}>set World</Button>
+    <Button onClick={() => set('你好')}>set 你好</Button>
+  </Space>
+  ~~~
+`;
 const UseToggle = () => {
   const [state, { toggle, set, setLeft, setRight }] = useToggle('hello', 'World');
   const [differentState, setDifferentState] = useToggle<string, boolean>('111', false);
@@ -60,9 +75,13 @@ const UseToggle = () => {
           <Button onClick={setRight}>set World</Button>
           <Button onClick={() => set('你好')}>set 你好</Button>
         </Space>
+        <ReactMarkdown value={basicUseToggle} />
         <Divider align='left'>
-          不同属性案例测试
+          不同类型案例测试
         </Divider>
+        <Text type={'secondary'}>
+          事实上，我们并不会用上两种不同的类型来进行切换，这里只是使用一个简单的例子来展示
+        </Text>
         <TextArea value={differentState.toString()} />
         <Space className={'w-full my-4'}>
           <Button onClick={setDifferentState.setRight}>set false</Button>
@@ -74,6 +93,11 @@ const UseToggle = () => {
         <Divider align={'left'}>
           实际用法
         </Divider>
+        <Text type={'secondary'}>
+          当我们只想在两个值之间进行切换的时候，useToggle就是一个很好方法
+          <br />
+          患者360中就有这么一个场景，我们需要在按时间排序和按床号排序之间进行切换
+        </Text>
         <Space vertical align={'start'} className={'w-full'}>
           <RadioGroup type={'pureCard'} defaultValue={orderState} onChange={setOrderState.toggle} className={'my-4'}>
             <Radio value={'time'}>按时间排序</Radio>

@@ -10,7 +10,7 @@ interface StateType {
 }
 
 const MyComponent = () => {
-  const api = useRef<any>();
+  const api = useRef<never>();
   const [state, setState] = useSetState<StateType>({
     name: 'Jack',
     age: '18'

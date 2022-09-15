@@ -1,7 +1,6 @@
-import type { NextPage } from 'next'
-import { Button, Divider, Space, Typography } from '@douyinfe/semi-ui'
-import Link from 'next/link'
-import Image from 'next/image'
+import type { NextPage } from 'next';
+import { Divider, Space, Typography } from '@douyinfe/semi-ui';
+import Image from 'next/image';
 
 const { Title } = Typography
 
