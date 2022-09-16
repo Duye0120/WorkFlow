@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Layout, Nav } from '@douyinfe/semi-ui';
 import Image from 'next/image';
 import logo from '../../public/logo.svg';
@@ -11,6 +11,11 @@ const { Sider, Content } = Layout;
 
 const ArcoLayout = ({ children, NavArray }: LayoutProps) => {
   const [navSelected, setNavSelected] = useState<string>('');
+  const { route } = useRouter();
+  console.log('route', route.split('/')[2]);
+  useEffect(() => {
+    setNavSelected(route.split('/')[2] ?? '');
+  }, [route]);
   return (
     <Layout className={'w-full h-screen bg-gray-200 !p-5'}>
       <Sider className={'h-full !w-1/5 !p-6 rounded-xl bg-white'}>
