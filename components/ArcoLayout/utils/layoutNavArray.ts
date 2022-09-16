@@ -16,6 +16,12 @@ const navArray: NavProps[] = [
       }, {
         text: 'useStorage',
         itemKey: 'useStorage'
+      }, {
+        text: 'useDebounce',
+        itemKey:'useDebounce'
+      }, {
+        text: 'useThrottle',
+        itemKey: 'useThrottle'
       }
     ]
   }
