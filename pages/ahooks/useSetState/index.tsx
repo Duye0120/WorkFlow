@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Divider, Form, Space, TextArea, Typography, useFormApi } from '@douyinfe/semi-ui';
 import { useSetState } from 'ahooks';
-React.useLayoutEffect = React.useEffect;
 const { Title, Text } = Typography;
 
 interface StateType {
@@ -13,7 +12,7 @@ const MyComponent = () => {
   const api = useRef<any>();
   const [state, setState] = useSetState<StateType>({
     name: 'Jack',
-    age: '18'
+    age: '18',
   });
 
   const SetName = () => {
@@ -49,7 +48,7 @@ const MyComponent = () => {
         onClick={() => {
           formApi.setValues({
             age: '18',
-            name: 'Jack'
+            name: 'Jack',
           });
         }}
       >
