@@ -41,7 +41,6 @@ const UseToggle = () => {
   const [differentState, setDifferentState] = useToggle<string, boolean>('111', false);
   const [orderState, setOrderState] = useToggle<string, string>('time', 'bedNo');
 
-
   return (
     <div className={'p-10 w-full h-full overflow-auto'}>
       <Space vertical align={'start'} className={'w-full'}>

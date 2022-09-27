@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Space } from '@douyinfe/semi-ui';
+import { Typography, Space, Divider } from '@douyinfe/semi-ui';
 
 const { Title, Text } = Typography;
 
@@ -14,6 +14,9 @@ const UseStorage = () => {
           <Text code>useSessionStorageState</Text>、
           <Text code>useCookieState</Text>
         </Text>
+        <Divider align={'left'}>
+          useSessionStorageState/useLocalStorageState
+        </Divider>
       </Space>
     </div>
   );
