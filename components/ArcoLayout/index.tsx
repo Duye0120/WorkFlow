@@ -17,53 +17,7 @@ const ArcoLayout = ({ children, NavArray }: LayoutProps) => {
     setNavSelected(route.split('/')[2] ?? '');
   }, [route]);
   return (
-    <Layout className={'w-full h-screen bg-gray-200 !p-5'}>
-      <Sider className={'h-full !w-1/5 !p-6 rounded-xl bg-white'}>
-        <Nav defaultOpenKeys={['State']} selectedKeys={[navSelected]} className={'!w-full !h-full border-0'}>
-          <Link href={'/'}>
-            <a
-              onClick={() => {
-                setNavSelected('');
-              }}
-            >
-              <Nav.Header logo={<Image height={30} src={logo} alt={'头像'} />} />
-            </a>
-          </Link>
-          {NavArray.map((item, index) => {
-            const { navSub, navItem } = item;
-            return (
-              <Nav.Sub
-                key={`${navSub}_${index}`}
-                className={'text-base'}
-                itemKey={navSub.itemKey}
-                text={<div className={'text-base'}>{navSub.text}</div>}
-                icon={<IconStar />}
-              >
-                {navItem.map((item, index) => {
-                  return (
-                    <Link key={`${item.itemKey}_${index}`} href={`/ahooks/${encodeURIComponent(item.itemKey)}`}>
-                      <a>
-                        <Nav.Item
-                          onClick={({ itemKey }) => {
-                            setNavSelected(itemKey as string);
-                          }}
-                          className={'text-base !h-10'}
-                          itemKey={item.itemKey}
-                          text={item.text}
-                        />
-                      </a>
-                    </Link>
-                  );
-                })}
-              </Nav.Sub>
-            );
-          })}
-        </Nav>
-      </Sider>
-      <Content className={'pl-6 overflow-y-hidden'}>
-        <div className={'border-2 scroll-auto bg-white w-full h-full overflow-y-hidden'}>{children}</div>
-      </Content>
-    </Layout>
+    <div className={'border-2 scroll-auto bg-white w-full h-full overflow-y-hidden'}>{children}</div>
   );
 };
 
