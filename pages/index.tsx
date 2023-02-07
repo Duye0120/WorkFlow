@@ -80,11 +80,11 @@ ${servicesTemplate(functionName, method, endpoint, annotation)}
       />
       <Space>
         <Paragraph copyable={{
-          content: modelsTemplate(formApi.current?.getValue('functionName'), formApi.current?.getValue('annotaion')),
+          content: modelsTemplate(formApi.current?.getValue('functionName'), formApi.current?.getValue('annotation')),
           onCopy: () => Toast.success('复制成功')
         }}>点我复制model层</Paragraph>
         <Paragraph copyable={{
-          content: servicesTemplate(formApi.current?.getValue('functionName'), formApi.current?.getValue('method'), formApi.current?.getValue('endpoint'), formApi.current?.getValue('annotaion')),
+          content: servicesTemplate(formApi.current?.getValue('functionName'), formApi.current?.getValue('method'), formApi.current?.getValue('endpoint'), formApi.current?.getValue('annotation')),
           onCopy: () => Toast.success('复制成功')
         }}>点我复制service层</Paragraph>
       </Space>
